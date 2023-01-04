@@ -13,6 +13,7 @@ struct loginView: View {
     @State private var wrongPassword = 0
     @State private var wrongUsername = 0
     @State private var showLoginScreen = false
+    @State private var textFail = false
     
     var body: some View {
         NavigationView {
@@ -51,26 +52,32 @@ struct loginView: View {
                         .frame(width: 300, height: 50)
                         .background(.blue)
                         .cornerRadius(10)
-                    
+                        .padding()
                     NavigationLink(destination: ViewHome(), isActive: $showLoginScreen){
-//                        Text("go to uikit viewcontroller")
                     }
+                    
+                    Text(textFail ? "Login gagal, periksa kembali username/password Anda”": "")
+                        .font(.caption)
                 }
             }
             .navigationBarHidden(true)
         }
     }
     func AutheticateUser(username: String, password: String){
-        if username.lowercased() == "ardhan" {
+        if username.lowercased() == "pitjarus" {
             wrongUsername = 0
-            if password.lowercased() == "ganteng" {
+            textFail = false
+            if password.lowercased() == "admin" {
                 wrongPassword = 0
                 showLoginScreen = true
+                textFail = false
             } else {
                 wrongPassword = 2
+                textFail = true
             }
         } else {
             wrongUsername = 2
+            textFail = true
         }
     }
 }
