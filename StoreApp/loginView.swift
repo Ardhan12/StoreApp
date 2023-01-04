@@ -53,6 +53,7 @@ struct loginView: View {
                         .background(.blue)
                         .cornerRadius(10)
                         .padding()
+                    
                     NavigationLink(destination: ViewHome(), isActive: $showLoginScreen){
                     }
                     

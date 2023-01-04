@@ -24,14 +24,7 @@ class ViewController: UIViewController {
         view.addSubview(map)
         tableView.dataSource = self
         tableView.delegate = self
-        LocationManager.shared.getUserLocation{ [weak self] location in
-            DispatchQueue.main.async {
-                guard let strongSelf = self else{
-                    return
-                }
-                strongSelf.addUserLocation(with: location)
-            }
-        }
+        getUserlocation()
         
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +40,17 @@ class ViewController: UIViewController {
         map.bottomAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
         
         fetchData()
+    }
+    
+    func getUserlocation() {
+        LocationManager.shared.getUserLocation{ [weak self] location in
+            DispatchQueue.main.async {
+                guard let strongSelf = self else{
+                    return
+                }
+                strongSelf.addUserLocation(with: location)
+            }
+        }
     }
     
     func fetchData() {
