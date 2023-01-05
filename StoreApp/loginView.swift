@@ -62,6 +62,7 @@ struct loginView: View {
                 }
             }
             .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
     }
     func AutheticateUser(username: String, password: String){
@@ -91,6 +92,7 @@ struct ViewHome : UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<ViewHome>) {
         // Update your UIKit view controller here, if needed
+        uiViewController.navigationItem.leftBarButtonItem = nil
     }
 }
 

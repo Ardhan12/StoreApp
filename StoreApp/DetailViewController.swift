@@ -9,6 +9,26 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var user: User?
+    var storeID = ""
+    var storeCode = ""
+    var storeName = ""
+    var address = ""
+    var dcID = ""
+    var dcName = ""
+    var accountID = ""
+    var accountName = ""
+    var subchannelID = ""
+    var subchannelName = ""
+    var channelID = ""
+    var channelName = ""
+    var areaID = ""
+    var areaName = ""
+    var regionID = ""
+    var regionName = ""
+    var latitude = ""
+    var longitude = ""
+    
     private let viewPage: UIView = {
         let viewpage = UIView()
         viewpage.translatesAutoresizingMaskIntoConstraints = true
@@ -26,7 +46,9 @@ class DetailViewController: UIViewController {
     }()
     private let imageNav: UIImageView = {
         let imageview = UIImageView()
-        imageview.image = UIImage(named: "alfa")
+        imageview.image = UIImage(systemName: "location.north.circle.fill" )
+        imageview.tintColor = .white
+        imageview.backgroundColor = .systemBlue
         imageview.frame = CGRect(x:320, y: 360, width:50 , height: 50)
         imageview.clipsToBounds = true
         imageview.layer.cornerRadius = imageview.frame.size.width / 2
@@ -36,7 +58,9 @@ class DetailViewController: UIViewController {
     }()
     private let imageCam: UIImageView = {
         let imageview = UIImageView()
-        imageview.image = UIImage(named: "alfa")
+        imageview.image = UIImage(systemName: "camera.circle.fill")
+        imageview.tintColor = .white
+        imageview.backgroundColor = .systemBlue
         imageview.frame = CGRect(x:260, y: 360, width:50 , height: 50)
         imageview.clipsToBounds = true
         imageview.layer.cornerRadius = imageview.frame.size.width / 2
@@ -46,7 +70,9 @@ class DetailViewController: UIViewController {
     }()
     private let imageLoc: UIImageView = {
         let imageview = UIImageView()
-        imageview.image = UIImage(named: "alfa")
+        imageview.image = UIImage(systemName: "map.circle.fill")
+        imageview.tintColor = .white
+        imageview.backgroundColor = .systemBlue
         imageview.frame = CGRect(x:200, y: 360, width:50 , height: 50)
         imageview.clipsToBounds = true
         imageview.layer.cornerRadius = imageview.frame.size.width / 2
@@ -63,7 +89,7 @@ class DetailViewController: UIViewController {
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.setTitle("No Visit", for: .normal)
-        button.addTarget(ViewController.self, action: #selector(buttonAction), for: .touchDragInside)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         return button
     }()
@@ -74,7 +100,7 @@ class DetailViewController: UIViewController {
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.setTitle("Visit", for: .normal)
-        button.addTarget(ViewController.self, action: #selector(buttonAction), for: .touchDragInside)
+        button.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
         return button
     }()
@@ -82,13 +108,44 @@ class DetailViewController: UIViewController {
     @objc func buttonAction(sender: UIButton!) {
         self.navigationController?.popViewController(animated: true)
     }
+    @objc func buttonAction2(sender: UIButton!) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Detail Page"
+        let text = UITextView()
+        text.frame = CGRect(x: 0, y: 420, width: 400, height: 300)
+        text.text = """
+        storeID         : \(storeID)
+        storeCode       : \(storeCode)
+        storeName       : \(storeName)
+        address         : \(address)
+        dcID            : \(dcID)
+        dcName          : \(dcName)
+        accountID       : \(accountID)
+        accountName     : \(accountName)
+        subchannelID    : \(subchannelID)
+        subchannelName  : \(subchannelName)
+        channelID       : \(channelID)
+        channelName     : \(channelName)
+        areaID          : \(areaID)
+        areaName        : \(areaName)
+        regionID        : \(regionID)
+        regionName      : \(regionName)
+        latitude        : \(latitude)
+        longitude       : \(longitude)
+"""
+        view.addSubview(text)
+        setView()
+        
+    }
+    
+    func setView() {
         view.backgroundColor = .white
-//        view.addSubview(viewPage)
         view.addSubview(imageView)
+//        view.addSubview(textDetail)
         view.addSubview(buttonVisit)
         view.addSubview(buttonNoVisit)
         view.addSubview(imageNav)
@@ -96,19 +153,9 @@ class DetailViewController: UIViewController {
         view.addSubview(imageLoc)
         addConstraint()
     }
-    //
     private func addConstraint() {
-//        var constraints = [NSLayoutConstraint]()
-        
         imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
         imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
-
-//        constraints.append(viewPage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor))
-//        constraints.append(viewPage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor))
-//        constraints.append(viewPage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
-//        constraints.append(viewPage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor))
-//
-//        NSLayoutConstraint.activate(constraints)
     }
     
 }

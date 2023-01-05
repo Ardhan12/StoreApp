@@ -14,7 +14,6 @@
 		BE01C28C2963B9610058E414 /* StoreApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE01C28A2963B9610058E414 /* StoreApp.xcdatamodeld */; };
 		BE01C28E2963B9620058E414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE01C28D2963B9620058E414 /* Assets.xcassets */; };
 		BE01C2912963B9620058E414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE01C28F2963B9620058E414 /* LaunchScreen.storyboard */; };
-		BE01C2992963BAAF0058E414 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C2982963BAAF0058E414 /* MapViewController.swift */; };
 		BE01C29B296432620058E414 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C29A296432620058E414 /* DetailViewController.swift */; };
 		BE01C29D296457010058E414 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C29C296457010058E414 /* loginView.swift */; };
 		BE01C29F296531F10058E414 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C29E296531F10058E414 /* ListView.swift */; };
@@ -33,7 +32,6 @@
 		BE01C28D2963B9620058E414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE01C2902963B9620058E414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE01C2922963B9620058E414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE01C2982963BAAF0058E414 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BE01C29A296432620058E414 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BE01C29C296457010058E414 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		BE01C29E296531F10058E414 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -75,18 +73,17 @@
 				BE01C2812963B9610058E414 /* AppDelegate.swift */,
 				BE01C2832963B9610058E414 /* SceneDelegate.swift */,
 				BE01C2852963B9610058E414 /* ViewController.swift */,
-				BE01C2982963BAAF0058E414 /* MapViewController.swift */,
 				BE01C29A296432620058E414 /* DetailViewController.swift */,
 				BE01C29C296457010058E414 /* loginView.swift */,
 				BE01C29E296531F10058E414 /* ListView.swift */,
+				BE01C2A0296533370058E414 /* LocationManager.swift */,
+				BE01C2A2296582580058E414 /* ApiService.swift */,
+				BE01C2A4296589D00058E414 /* Model.swift */,
 				BE01C2872963B9610058E414 /* Main.storyboard */,
 				BE01C28D2963B9620058E414 /* Assets.xcassets */,
 				BE01C28F2963B9620058E414 /* LaunchScreen.storyboard */,
 				BE01C2922963B9620058E414 /* Info.plist */,
 				BE01C28A2963B9610058E414 /* StoreApp.xcdatamodeld */,
-				BE01C2A0296533370058E414 /* LocationManager.swift */,
-				BE01C2A2296582580058E414 /* ApiService.swift */,
-				BE01C2A4296589D00058E414 /* Model.swift */,
 			);
 			path = StoreApp;
 			sourceTree = "<group>";
@@ -169,7 +166,6 @@
 				BE01C2842963B9610058E414 /* SceneDelegate.swift in Sources */,
 				BE01C29B296432620058E414 /* DetailViewController.swift in Sources */,
 				BE01C2A3296582580058E414 /* ApiService.swift in Sources */,
-				BE01C2992963BAAF0058E414 /* MapViewController.swift in Sources */,
 				BE01C2A5296589D00058E414 /* Model.swift in Sources */,
 				BE01C28C2963B9610058E414 /* StoreApp.xcdatamodeld in Sources */,
 				BE01C2A1296533370058E414 /* LocationManager.swift in Sources */,

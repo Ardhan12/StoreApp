@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SwiftUI
 
 class ViewController: UIViewController {
     let tableView = UITableView()
@@ -18,10 +19,33 @@ class ViewController: UIViewController {
         return map
     }()
     
+    private let buttonLogout: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 320, y: 0, width: 70, height: 35)
+        button.backgroundColor = .white
+        button.tintColor = .red
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.red.cgColor
+        button.layer.cornerRadius = 10
+        button.setTitle("logout", for: .normal)
+        button.addTarget(ViewController.self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    @objc func logoutButtonTapped() {
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")// Return to the login screen
+        let login = UIHostingController(rootView: loginView())
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = login
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = nil
         view.addSubview(tableView)
         view.addSubview(map)
+        view.addSubview(buttonLogout)
         tableView.dataSource = self
         tableView.delegate = self
         getUserlocation()
@@ -38,6 +62,8 @@ class ViewController: UIViewController {
         map.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         map.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         map.bottomAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
+        
+//        buttonLogout.translatesAutoresizingMaskIntoConstraints = false
         
         fetchData()
     }
@@ -105,6 +131,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
+        vc.storeID = user?.stores[indexPath.row].storeID ?? ""
+        vc.storeName = user?.stores[indexPath.row].storeName ?? ""
+        vc.storeCode = user?.stores[indexPath.row].storeCode ?? ""
+        vc.address = user?.stores[indexPath.row].address ?? ""
+        vc.dcID = user?.stores[indexPath.row].dcID ?? ""
+        vc.dcName = user?.stores[indexPath.row].dcName ?? ""
+        vc.accountID = user?.stores[indexPath.row].accountID ?? ""
+        vc.accountName = user?.stores[indexPath.row].accountName ?? ""
+        vc.subchannelID = user?.stores[indexPath.row].subchannelID ?? ""
+        vc.subchannelName = user?.stores[indexPath.row].subchannelName ?? ""
+        vc.channelID = user?.stores[indexPath.row].channelID ?? ""
+        vc.channelName = user?.stores[indexPath.row].channelName ?? ""
+        vc.areaID = user?.stores[indexPath.row].areaID ?? ""
+        vc.areaName = user?.stores[indexPath.row].areaName ?? ""
+        vc.regionID = user?.stores[indexPath.row].regionID ?? ""
+        vc.regionName = user?.stores[indexPath.row].regionName ?? ""
+        vc.latitude = user?.stores[indexPath.row].latitude ?? ""
+        vc.longitude = user?.stores[indexPath.row].longitude ?? ""
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -115,31 +160,3 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return "List terkahir diupdate \(dateString)"
     }
 }
-
-
-
-
-
-
-
-
-//        setMapConstraints()
-
-//        let location = CLLocationCoordinate2D(latitude: -6.228472515314836, longitude: 106.78499711236272)
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = location
-//        annotation.title = "your location"
-//        mapView.addAnnotation(annotation)
-
-//    private func setMapConstraints() {
-//        view.addSubview(mapView)
-//
-//
-//        mapView.translatesAutoresizingMaskIntoConstraints = false
-//        mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-//        mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-//        mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-//        mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-////        mapView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
-//
-//    }
