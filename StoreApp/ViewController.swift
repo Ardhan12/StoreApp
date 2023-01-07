@@ -11,6 +11,8 @@ import CoreLocation
 import SwiftUI
 
 class ViewController: UIViewController {
+    
+    @State private var isLoggedIn = true
     let tableView = UITableView()
     var user: User?
     let map : MKMapView = {
@@ -28,21 +30,24 @@ class ViewController: UIViewController {
         button.layer.borderColor = UIColor.red.cgColor
         button.layer.cornerRadius = 10
         button.setTitle("logout", for: .normal)
-        button.addTarget(ViewController.self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
         
         return button
     }()
-    @objc func logoutButtonTapped() {
-        UserDefaults.standard.set(false, forKey: "isLoggedIn")// Return to the login screen
-        let login = UIHostingController(rootView: loginView())
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = login
+    
+    @objc func logoutButtonTapped(sender: UIButton!) {
+//        isLoggedIn = false
+//        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+//        let login = UIHostingController(rootView: loginView())
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = login
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = nil
+        super.viewDidLoad()
         view.addSubview(tableView)
         view.addSubview(map)
         view.addSubview(buttonLogout)
@@ -63,7 +68,6 @@ class ViewController: UIViewController {
         map.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         map.bottomAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
         
-//        buttonLogout.translatesAutoresizingMaskIntoConstraints = false
         
         fetchData()
     }

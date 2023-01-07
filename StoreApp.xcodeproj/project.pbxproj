@@ -20,6 +20,7 @@
 		BE01C2A1296533370058E414 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C2A0296533370058E414 /* LocationManager.swift */; };
 		BE01C2A3296582580058E414 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C2A2296582580058E414 /* ApiService.swift */; };
 		BE01C2A5296589D00058E414 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C2A4296589D00058E414 /* Model.swift */; };
+		BE7282FB2966A1D300DDCC31 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7282FA2966A1D300DDCC31 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BE01C2A0296533370058E414 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BE01C2A2296582580058E414 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		BE01C2A4296589D00058E414 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BE7282FA2966A1D300DDCC31 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				BE01C2A0296533370058E414 /* LocationManager.swift */,
 				BE01C2A2296582580058E414 /* ApiService.swift */,
 				BE01C2A4296589D00058E414 /* Model.swift */,
+				BE7282FA2966A1D300DDCC31 /* DataModel.swift */,
 				BE01C2872963B9610058E414 /* Main.storyboard */,
 				BE01C28D2963B9620058E414 /* Assets.xcassets */,
 				BE01C28F2963B9620058E414 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 			files = (
 				BE01C29F296531F10058E414 /* ListView.swift in Sources */,
 				BE01C2862963B9610058E414 /* ViewController.swift in Sources */,
+				BE7282FB2966A1D300DDCC31 /* DataModel.swift in Sources */,
 				BE01C2822963B9610058E414 /* AppDelegate.swift in Sources */,
 				BE01C29D296457010058E414 /* loginView.swift in Sources */,
 				BE01C2842963B9610058E414 /* SceneDelegate.swift in Sources */,

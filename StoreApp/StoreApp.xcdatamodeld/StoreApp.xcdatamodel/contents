@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="StoreData" representedClassName="StoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="accountID" optional="YES" attributeType="String"/>
+        <attribute name="accountName" optional="YES" attributeType="String"/>
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="areaID" optional="YES" attributeType="String"/>
+        <attribute name="areaName" optional="YES" attributeType="String"/>
+        <attribute name="channelID" optional="YES" attributeType="String"/>
+        <attribute name="channelName" optional="YES" attributeType="String"/>
+        <attribute name="dcID" optional="YES" attributeType="String"/>
+        <attribute name="dcName" optional="YES" attributeType="String"/>
+        <attribute name="latidude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+        <attribute name="regionID" optional="YES" attributeType="String"/>
+        <attribute name="regionName" optional="YES" attributeType="String"/>
+        <attribute name="storeCode" optional="YES" attributeType="String"/>
+        <attribute name="storeID" optional="YES" attributeType="String"/>
+        <attribute name="storeName" optional="YES" attributeType="String"/>
+        <attribute name="subChannelID" optional="YES" attributeType="String"/>
+        <attribute name="subChannelName" optional="YES" attributeType="String"/>
+    </entity>
 </model>

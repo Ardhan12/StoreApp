@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct loginView: View {
+    
+    
     @State private var username = ""
     @State private var password = ""
     @State private var wrongPassword = 0
@@ -47,6 +49,8 @@ struct loginView: View {
                         .border(.red, width: CGFloat(wrongPassword))
                     
                     Button("Login"){
+                        
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
                         AutheticateUser(username: username, password: password)
                     }.foregroundColor(.white)
                         .frame(width: 300, height: 50)
@@ -55,7 +59,8 @@ struct loginView: View {
                         .padding()
                     
                     NavigationLink(destination: ViewHome(), isActive: $showLoginScreen){
-                    }
+                        
+                    }.navigationBarBackButtonHidden(true)
                     
                     Text(textFail ? "Login gagal, periksa kembali username/password Anda”": "")
                         .font(.caption)
